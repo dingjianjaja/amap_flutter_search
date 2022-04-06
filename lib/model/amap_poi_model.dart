@@ -8,7 +8,7 @@
  * 可以输入预定的版权声明、个性签名、空行等
  */
 
-import 'package:amap_flutter_search/model/amap_geocode.dart';
+import 'package:yingzi_flutter_amap_search/model/amap_geocode.dart';
 
 class AMapPoi {
   String? adcode;

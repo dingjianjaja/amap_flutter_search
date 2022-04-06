@@ -18,7 +18,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  amap_flutter_search:
+  yingzi_flutter_amap_search:
     # When depending on this package from a real application you should use:
     #   amap_flutter_search: ^x.y.z
     # See https://dart.dev/tools/pub/dependencies#version-constraints
