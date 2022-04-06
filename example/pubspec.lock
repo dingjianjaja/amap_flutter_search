@@ -205,7 +205,7 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.1"
-  yingzi_flutter_amap_search:
+  yingzi_flutter_amap_search_v2:
     dependency: "direct main"
     description:
       path: ".."

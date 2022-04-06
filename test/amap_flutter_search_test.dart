@@ -9,7 +9,7 @@
  */
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:yingzi_flutter_amap_search/amap_flutter_search.dart';
+import 'package:yingzi_flutter_amap_search_v2/amap_flutter_search.dart';
 
 void main() {
   const MethodChannel channel = MethodChannel('amap_flutter_search');

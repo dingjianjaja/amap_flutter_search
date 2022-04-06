@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:yingzi_flutter_amap_search/model/amap_geocode.dart';
-import 'package:yingzi_flutter_amap_search/model/amap_poi_model.dart';
+import 'package:yingzi_flutter_amap_search_v2/model/amap_geocode.dart';
+import 'package:yingzi_flutter_amap_search_v2/model/amap_poi_model.dart';
 import 'package:flutter/services.dart';
-export 'package:yingzi_flutter_amap_search/model/amap_geocode.dart';
-export 'package:yingzi_flutter_amap_search/model/amap_poi_model.dart';
+export 'package:yingzi_flutter_amap_search_v2/model/amap_geocode.dart';
+export 'package:yingzi_flutter_amap_search_v2/model/amap_poi_model.dart';
 
 class AmapFlutterSearch {
   static const MethodChannel _channel = MethodChannel('amap_flutter_search');

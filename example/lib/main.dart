@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:amap_flutter_search/amap_flutter_search.dart';
+import 'package:yingzi_flutter_amap_search_v2/amap_flutter_search.dart';
 
 void main() {
   runApp(const MyApp());

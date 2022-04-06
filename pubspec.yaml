@@ -1,4 +1,4 @@
-name: yingzi_flutter_amap_search
+name: yingzi_flutter_amap_search_v2
 description: 高德官方没有提供search相关的Flutter插件，本插件针对高德地图搜索功能官方原生插件进行封装
 version: 0.0.4
 homepage: 
