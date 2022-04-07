@@ -3,7 +3,7 @@
 # Run `pod lib lint amap_flutter_search.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'amap_flutter_search'
+  s.name             = 'yingzi_flutter_amap_search_v2'
   s.version          = '0.0.1'
   s.summary          = 'A new Flutter project.'
   s.description      = <<-DESC
