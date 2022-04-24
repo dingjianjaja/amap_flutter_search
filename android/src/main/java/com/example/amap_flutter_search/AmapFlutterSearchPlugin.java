@@ -136,6 +136,7 @@ public class AmapFlutterSearchPlugin implements FlutterPlugin, MethodCallHandler
       PoiSearch.Query query = new PoiSearch.Query(keyword,"",city);
       query.setPageSize(35);
       query.setPageNum(1);
+      query.setCityLimit(true);
 
       poiSearch = new PoiSearch(mContext,query);
       poiSearch.setOnPoiSearchListener(this);
