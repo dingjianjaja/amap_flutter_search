@@ -37,6 +37,8 @@
         NSString *keyword = call.arguments[@"keyword"];
         NSString *city = call.arguments[@"city"];
         NSString *types = call.arguments[@"types"];
+        NSNumber *page = call.arguments[@"page"];
+        NSNumber *pageSize = call.arguments[@"pageSize"];
         search = [[AMapSearchAPI alloc] init];
         search.delegate = self;
         AMapPOIKeywordsSearchRequest *geo = [[AMapPOIKeywordsSearchRequest alloc] init];
@@ -48,16 +50,25 @@
         /*  搜索SDK 3.2.0 中新增加的功能，只搜索本城市的POI。*/
         geo.cityLimit           = YES;
         geo.requireSubPOIs      = YES;
+        // 分页参数
+        if (page != nil) {
+            geo.page = [page intValue];
+        }
+        if (pageSize != nil) {
+            geo.offset = [pageSize intValue];
+        }
         
         [search AMapPOIKeywordsSearch:geo];
         
         resultCallback = result;
-//        result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
     }else if([@"searchAround" isEqualToString:call.method]){
         NSString *keyword = call.arguments[@"keyword"];
         NSString *city = call.arguments[@"city"];
         NSString *latitude = call.arguments[@"latitude"];
         NSString *longitude = call.arguments[@"longitude"];
+        NSNumber *page = call.arguments[@"page"];
+        NSNumber *pageSize = call.arguments[@"pageSize"];
+        NSNumber *radius = call.arguments[@"radius"];
         search = [[AMapSearchAPI alloc] init];
         search.delegate = self;
         AMapPOIAroundSearchRequest *geo = [[AMapPOIAroundSearchRequest alloc] init];
@@ -67,6 +78,16 @@
         geo.keywords            = keyword;
         geo.requireExtension    = YES;
         geo.requireSubPOIs      = YES;
+        if (radius != nil) {
+            geo.radius = [radius intValue];
+        }
+        // 分页参数
+        if (page != nil) {
+            geo.page = [page intValue];
+        }
+        if (pageSize != nil) {
+            geo.offset = [pageSize intValue];
+        }
         
         [search AMapPOIAroundSearch:geo];
         
@@ -151,7 +172,6 @@
             [dic setObject:[self dicWithObject:value] forKey:name];
         } else if (value == nil) {
             //null
-            //[dic setObject:[NSNull null] forKey:name];//这行可以注释掉?????
         } else {
             //model
             [dic setObject:[self dicFromObject:value] forKey:name];

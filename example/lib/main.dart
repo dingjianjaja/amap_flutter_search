@@ -1,7 +1,7 @@
 /*
  * @Author: 丁健
  * @Date: 2022-04-01 08:43:58
- * @LastEditTime: 2022-04-04 18:29:55
+ * @LastEditTime: 2022-04-26 09:43:08
  * @LastEditors: 丁健
  * @Description: 
  * @FilePath: /amap_flutter_search/example/lib/main.dart
@@ -115,8 +115,9 @@ class _YZHomePageState extends State<YZHomePage> {
                 TextButton.icon(
                     onPressed: () async {
                       dataList = await AmapFlutterSearch.searchKeyword(
-                        textEditingController.text,
-                      );
+                          textEditingController.text,
+                          page: 1,
+                          pageSize: 5);
                       setState(() {});
                     },
                     icon: const Icon(Icons.search),
