@@ -101,24 +101,24 @@ class AmapFlutterSearch {
   /// 输入内容自动提示
   ///
   /// 输入关键字[keyword], 并且限制所在城市[city]
-  static Future<List> fetchInputTips(
-    String keyword, {
-    String city = '',
-  }) async {
-    final String? version = await _channel.invokeMethod('fetchInputTips');
-    return [];
-  }
+  // static Future<List> fetchInputTips(
+  //   String keyword, {
+  //   String city = '',
+  // }) async {
+  //   final String? version = await _channel.invokeMethod('fetchInputTips');
+  //   return [];
+  // }
 
   /// 地理编码（地址转坐标）
   ///
   /// 输入关键字[keyword], 并且限制所在城市[city]
-  static Future<List> searchGeocode(
-    String keyword, {
-    String city = '',
-  }) async {
-    final String? version = await _channel.invokeMethod('searchGeocode');
-    return [];
-  }
+  // static Future<List> searchGeocode(
+  //   String keyword, {
+  //   String city = '',
+  // }) async {
+  //   final String? version = await _channel.invokeMethod('searchGeocode');
+  //   return [];
+  // }
 
   /// 逆地理编码（坐标转地址）
   ///

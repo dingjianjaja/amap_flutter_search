@@ -133,9 +133,12 @@ public class AmapFlutterSearchPlugin implements FlutterPlugin, MethodCallHandler
     if (null != searchParams) {
       String keyword = (String) searchParams.get("keyword");
       String city = (String) searchParams.get("city");
+      int page = (int) searchParams.get("page");
+      int pageSize = (int) searchParams.get("pageSize");
       PoiSearch.Query query = new PoiSearch.Query(keyword,"",city);
-      query.setPageSize(35);
-      query.setPageNum(1);
+      query.setPageSize(pageSize);
+      query.setPageNum(page);
+      query.setCityLimit(true);
 
       poiSearch = new PoiSearch(mContext,query);
       poiSearch.setOnPoiSearchListener(this);
@@ -155,10 +158,12 @@ public class AmapFlutterSearchPlugin implements FlutterPlugin, MethodCallHandler
       String city = (String) searchParams.get("city");
       Double latitude = (Double) searchParams.get("latitude");
       Double longitude = (Double) searchParams.get("longitude");
+      int page = (int) searchParams.get("page");
+      int pageSize = (int) searchParams.get("pageSize");
 
       PoiSearch.Query query = new PoiSearch.Query(keyword,"",city);
-      query.setPageSize(35);
-      query.setPageNum(1);
+      query.setPageSize(pageSize);
+      query.setPageNum(page);
 
       poiSearch = new PoiSearch(mContext,query);
       poiSearch.setBound(new PoiSearch.SearchBound(new LatLonPoint(latitude,longitude),1000));
