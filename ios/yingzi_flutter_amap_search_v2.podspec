@@ -16,7 +16,7 @@ A new Flutter project.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.dependency 'AMapSearch', '~> 8.1.0'
+  s.dependency 'AMapSearch'
   s.static_framework = true
   s.platform = :ios, '9.0'
 
