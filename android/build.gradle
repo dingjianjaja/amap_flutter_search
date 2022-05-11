@@ -34,6 +34,6 @@ android {
     }
     dependencies {
         //搜索功能
-        compile 'com.amap.api:search:latest.integration'
+        api 'com.amap.api:search:latest.integration'
     }
 }
