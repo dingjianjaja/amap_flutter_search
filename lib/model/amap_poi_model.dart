@@ -1,7 +1,7 @@
 /*
  * @Author: 丁健
  * @Date: 2022-04-01 11:24:12
- * @LastEditTime: 2022-04-01 11:24:13
+ * @LastEditTime: 2022-06-23 10:30:58
  * @LastEditors: 丁健
  * @Description: 
  * @FilePath: /amap_flutter_search/lib/model/amap_poi_model.dart
@@ -25,7 +25,11 @@ class AMapPoi {
   Location? location;
   String? name;
   String? parkingType;
+
+  /// 省份编码
   String? pcode;
+
+  /// 省份名称
   String? province;
 
   AMapPoi(
