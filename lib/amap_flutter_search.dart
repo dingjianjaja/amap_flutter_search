@@ -46,12 +46,14 @@ class AmapFlutterSearch {
   /// 关键字搜索poi
   ///
   /// 在城市[city]搜索关键字[keyword]的poi, 可以设置每页数量[pageSize](1-50)和第[page](1-100)页
+  /// [needAddress] 是否返回详细地址信息（适用于Android，iOS配不配都返回详细信息）
   static Future<List<AMapPoi>> searchKeyword(
     String keyword, {
     String city = '',
     String types = '',
     int pageSize = 20,
     int page = 1,
+    bool needAddress = false,
   }) async {
     assert(page > 0 && page < 100, '页数范围为1-100');
     assert(pageSize > 0 && pageSize < 50, '每页大小范围为1-50');
@@ -60,7 +62,8 @@ class AmapFlutterSearch {
       'city': city,
       'pageSize': pageSize,
       'page': page,
-      'types': types
+      'types': types,
+      'needAddress': needAddress
     });
 
     // return dataList ?? [];
@@ -73,6 +76,7 @@ class AmapFlutterSearch {
   /// 周边搜索poi
   ///
   /// 在中心点[center]周边搜索关键字[keyword]和城市[city]的poi, 可以设置每页数量[pageSize](1-50)和第[page](1-100)页
+  /// [needAddress] 是否返回详细地址信息（适用于Android，iOS配不配都返回详细信息）
   static Future<List<AMapPoi>> searchAround(
     Location center, {
     String keyword = '',
@@ -80,6 +84,7 @@ class AmapFlutterSearch {
     int pageSize = 20,
     int page = 1,
     int radius = 1000,
+    bool needAddress = false,
   }) async {
     assert(page > 0 && page < 100, '页数范围为1-100');
     assert(pageSize > 0 && pageSize < 50, '每页大小范围为1-50');
@@ -90,7 +95,9 @@ class AmapFlutterSearch {
       'pageSize': pageSize,
       'page': page,
       'longitude': center.longitude,
-      'latitude': center.latitude
+      'latitude': center.latitude,
+      'radius': radius,
+      'needAddress': needAddress
     });
     return dataList?.map((e) {
           return AMapPoi.fromJson(e);
